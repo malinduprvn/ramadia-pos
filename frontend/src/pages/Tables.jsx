@@ -181,7 +181,7 @@ const Tables = () => {
 
       {selectedTable && (
         <div className="modal modal-open">
-          <div className="modal-box max-w-6xl">
+          <div className="modal-box max-w-6xl w-full mx-4">
             <h3 className="font-bold text-lg mb-4">Table {selectedTable.tableNumber} - Order Management</h3>
 
             <div className="flex gap-4 mb-6">
@@ -246,7 +246,7 @@ const Tables = () => {
       {/* Order Form Modal */}
       {showOrderForm && (
         <div className="modal modal-open">
-          <div className="modal-box max-w-4xl">
+          <div className="modal-box max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
             <h3 className="font-bold text-lg mb-4">Add Order for Table {selectedTable?.tableNumber}</h3>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

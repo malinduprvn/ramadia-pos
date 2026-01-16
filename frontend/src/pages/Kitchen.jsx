@@ -125,19 +125,19 @@ const Kitchen = () => {
   return (
     <div className="min-h-screen bg-base-200 p-6">
       <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-center mb-6">
-          <h1 className="text-4xl font-bold text-primary">Kitchen Display System</h1>
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-2">
+          <h1 className="text-2xl sm:text-4xl font-bold text-primary">Kitchen Display System</h1>
           <div className="text-sm text-base-content/70">
             Real-time order management
           </div>
         </div>
 
         {/* Status Filter */}
-        <div className="tabs tabs-boxed mb-6">
+        <div className="tabs tabs-boxed mb-6 overflow-x-auto">
           {['all', 'pending', 'preparing', 'ready'].map((status) => (
             <a
               key={status}
-              className={`tab ${filter === status ? 'tab-active' : ''}`}
+              className={`tab whitespace-nowrap ${filter === status ? 'tab-active' : ''}`}
               onClick={() => setFilter(status)}
             >
               {status.charAt(0).toUpperCase() + status.slice(1)}

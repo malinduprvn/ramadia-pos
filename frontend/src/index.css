@@ -11,6 +11,34 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .modal-box {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    width: calc(100vw - 1rem);
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+
+  .btn {
+    min-height: 2.75rem;
+    font-size: 0.875rem;
+  }
+
+  .tabs .tab {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
