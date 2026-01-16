@@ -72,7 +72,7 @@ const Navbar = () => {
         {/* Mobile menu button */}
         <div className="dropdown dropdown-end lg:hidden">
           <label 
-            tabIndex={0} 
+            tabIndex={2} 
             className="btn btn-ghost btn-circle"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
@@ -80,7 +80,7 @@ const Navbar = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </label>
-          <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+          <ul tabIndex={2} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 z-50">
             {getNavLinks().map((link) => (
               <li key={link.to}>
                 <Link to={link.to} onClick={() => setIsMobileMenuOpen(false)}>{link.label}</Link>
@@ -91,20 +91,27 @@ const Navbar = () => {
 
         {/* User menu */}
         <div className="dropdown dropdown-end">
-          <label tabIndex={0} className="btn btn-ghost btn-circle avatar ml-2">
+          <label tabIndex={1} className="btn btn-ghost btn-circle avatar ml-2" role="button">
             <div className="w-10 rounded-full bg-primary flex items-center justify-center text-primary-content font-semibold">
               {user.name.charAt(0).toUpperCase()}
             </div>
           </label>
-          <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+          <ul tabIndex={1} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 z-50">
             <li className="menu-title">
-              <span className="text-base-content">{user.name}</span>
+              <span className="text-base-content font-medium">{user.name}</span>
             </li>
             <li className="menu-title">
               <span className="text-sm text-base-content/70 capitalize">{user.role}</span>
             </li>
-            <div className="divider my-0"></div>
-            <li><a onClick={handleLogout}>Logout</a></li>
+            <div className="divider my-1"></div>
+            <li>
+              <a 
+                onClick={handleLogout} 
+                className="text-error hover:bg-error hover:text-error-content cursor-pointer"
+              >
+                Logout
+              </a>
+            </li>
           </ul>
         </div>
       </div>
